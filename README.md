@@ -70,7 +70,7 @@ The port of the host on which the MQTT broker listens.
 
 The topic under which MQTT messages shall be published.
 
-    #jmqttp_jenkins_url: http://localhost:8280
+    #jmqttp_jenkins_url: http://localhost:8080
 
 The URL of the Jenkins host to be polled.
 
