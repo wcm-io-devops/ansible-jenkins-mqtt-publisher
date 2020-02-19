@@ -4,7 +4,7 @@ This role deploys a Python-based systemd service that polls a Jenkins
 instance for active jobs and publishes [MQTT](https://en.wikipedia.org/wiki/MQTT) messages containing the
 build result. It was made to be used together with the wcm.io DevOps
 Jenkins Extreme Feedback Device Client
-[wcm_io_devops.jenkins_xfd](https://github.com/wcm-io-devops/ansible-jenkins-xfd)).
+[wcm_io_devops.jenkins_xfd](https://github.com/wcm-io-devops/ansible-jenkins-xfd).
 
 ## How does it work?
 
@@ -16,8 +16,9 @@ by a client that deals with the MQTT payload to control a Cleware device.
 
 **Important** - You have to configure a view on your Jenkins instance that only shows the currently building jobs.
 You have to use the [View Job Filters plugin](https://plugins.jenkins.io/view-job-filters/) for this. In the view's
-configuration, you have to click "Add Job Filter" > "Build Statuses Filter" > tick "Currently Building" > "Match Type":
-"Exclude Unmatched".
+configuration, you have to click:
+
+    "Add Job Filter" > "Build Statuses Filter" > tick "Currently Building" > "Match Type": "Exclude Unmatched"
 
 ## Script
 
