@@ -1,0 +1,4 @@
+- name: Test role syntax.
+  hosts: test
+  roles:
+    - ansible-jenkins-mqtt-publisher
