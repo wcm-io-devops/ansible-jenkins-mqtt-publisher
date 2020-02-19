@@ -3,8 +3,8 @@ galaxy_info:
   author: Nico Bellack
   description: Deploys a service that polls a Jenkins instance for active jobs and publishes MQTT messages.
   company: pro!vision
-  #issue_tracker_url: https://wcm-io.atlassian.net
-  #license: Apache
+  issue_tracker_url: https://wcm-io.atlassian.net
+  license: Apache
   min_ansible_version: 2.7
 
   platforms:
