@@ -1,3 +1,6 @@
+[![Ansible Galaxy](https://img.shields.io/ansible/role/46686)](https://galaxy.ansible.com/wcm_io_devops/jenkins_mqtt_publisher)
+[![Build Status](https://travis-ci.org/wcm-io-devops/ansible-jenkins-mqtt-publisher.svg?branch=master)](https://travis-ci.org/wcm-io-devops/ansible-jenkins-mqtt-publisher)
+
 # Jenkins MQTT Publisher (jmqttp)
 
 This role deploys a Python-based systemd service that polls a Jenkins
