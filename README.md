@@ -99,7 +99,7 @@ messages under the topic `foo/bar`.
       hosts: jmqttp
       vars:
         jmqttp_mqtt_topic: foo/bar
-        jmqttp_jenkins_url: http://localhost:8280
+        jmqttp_jenkins_url: http://localhost:8080
         jmqttp_jenkins_user: admin
         jmqttp_jenkins_password: admin
         jmqttp_jenkins_view: currently_building
