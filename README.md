@@ -98,9 +98,9 @@ messages under the topic `foo/bar`.
         jmqttp_jenkins_url: http://localhost:8280
         jmqttp_jenkins_user: admin
         jmqttp_jenkins_password: admin
-        jmqttp_jenkins_folder: development
+        jmqttp_jenkins_view: currently_building
       roles:
-        - role: pro_vision.jenkins_mqtt_publisher
+        - role: wcm_io_devops.jenkins_mqtt_publisher
           tags:
             - jmqttp
 
