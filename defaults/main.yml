@@ -36,7 +36,7 @@ jmqttp_script: "{{ jmqttp_basedir }}/jmqttp.py"
 jmqttp_config: "{{ jmqttp_basedir }}/config.yml"
 
 # The MQTT broker to which the messages will be published.
-jmqttp_mqtt_broker: mqtt.pro-vision.de
+jmqttp_mqtt_broker: localhost
 
 # The port of the MQTT broker to be used.
 jmqttp_mqtt_port: 1883
