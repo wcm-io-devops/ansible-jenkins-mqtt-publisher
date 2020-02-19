@@ -1,0 +1,80 @@
+- name: Install OS packages.
+  package:
+    name: "{{ jmqttp_os_packages }}"
+  tags:
+    - packages
+    - apt
+    - install
+
+- name: Install pip packages.
+  pip:
+    name: "{{ jmqttp_pip_packages }}"
+  tags:
+    - packages
+    - pip
+    - install
+
+- name: Create group.
+  group:
+    name: "{{ jmqttp_group }}"
+  tags:
+    - user
+    - install
+
+- name: Create user.
+  user:
+    name: "{{ jmqttp_owner }}"
+    group: "{{ jmqttp_group }}"
+  tags:
+    - user
+    - install
+
+- name: Create directory.
+  file:
+    path: "{{ jmqttp_basedir }}"
+    owner: "{{ jmqttp_owner }}"
+    group: "{{ jmqttp_group }}"
+    state: directory
+  tags:
+    - install
+
+- name: Deploy publisher script.
+  copy:
+    src: jmqttp.py
+    dest: "{{ jmqttp_script }}"
+    owner: "{{ jmqttp_owner }}"
+    group: "{{ jmqttp_group }}"
+  tags:
+    - client
+  notify:
+    - restart jmqttp
+
+- name: Deploy config.
+  template:
+    src: templates/config.yml.j2
+    dest: "{{ jmqttp_config }}"
+    owner: "{{ jmqttp_owner }}"
+    group: "{{ jmqttp_group }}"
+  tags:
+    - config
+  notify:
+    - restart jmqttp
+
+- name: Deploy systemd service file.
+  template:
+    src: templates/jmqttp.service.j2
+    dest: /etc/systemd/system/jmqttp.service
+  register: _service_result
+  tags:
+    - service
+  notify:
+    - restart jmqttp
+
+- name: Enable and start service.
+  systemd:
+    name: jmqttp
+    enabled: yes
+    state: started
+    daemon_reload: "{{ _service_result.changed }}"
+  tags:
+    - service

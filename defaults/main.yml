@@ -1,0 +1,60 @@
+# The required pip packages to install
+jmqttp_pip_packages:
+  - certifi
+  - chardet
+  - idna
+  - multi-key-dict
+  - paho-mqtt
+  - pbr
+  - python-jenkins
+  - PyYAML
+  - requests
+  - six
+  - urllib3
+
+# The required os packages to install
+jmqttp_os_packages:
+  - git
+  - libhidapi-dev
+  - build-essential
+  - gettext
+  - python3-systemd
+  - python3-setuptools
+  - python3-pip
+
+# Owner and group of files and folders
+jmqttp_owner: jmqttp
+jmqttp_group: "{{ jmqttp_owner }}"
+
+# base directory for the publisher
+jmqttp_basedir: /opt/jmqttp
+
+# path to the publisher script
+jmqttp_script: "{{ jmqttp_basedir }}/jmqttp.py"
+
+# path to the configuration
+jmqttp_config: "{{ jmqttp_basedir }}/config.yml"
+
+# The MQTT broker to which the messages will be published.
+jmqttp_mqtt_broker: mqtt.pro-vision.de
+
+# The port of the MQTT broker to be used.
+jmqttp_mqtt_port: 1883
+
+# The MQTT topic under which messages will be published.
+#jmqttp_mqtt_topic: jenkins/foo
+
+# The URL of the Jenkins instance to be polled.
+#jmqttp_jenkins_url: http://localhost:8280
+
+# The username for the Jenkins instance to be polled.
+#jmqttp_jenkins_user: admin
+
+# The URL of the Jenkins instance to be polled.
+#jmqttp_jenkins_password: admin
+
+# The view on the Jenkins instance to be polled, which shows the currently building jobs.
+#jmqttp_jenkins_view: currently_building
+
+# The frequency in seconds by which the Jenkins instance will be polled.
+jmqttp_jenkins_poll_frequency: 10

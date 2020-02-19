@@ -1,0 +1,4 @@
+- name: restart jmqttp
+  service:
+    name: jmqttp
+    state: restarted
