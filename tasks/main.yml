@@ -1,3 +1,4 @@
+---
 - name: Install OS packages.
   package:
     name: "{{ jmqttp_os_packages }}"
@@ -34,6 +35,7 @@
     path: "{{ jmqttp_basedir }}"
     owner: "{{ jmqttp_owner }}"
     group: "{{ jmqttp_group }}"
+    mode: "0755"
     state: directory
   tags:
     - install
@@ -44,6 +46,7 @@
     dest: "{{ jmqttp_script }}"
     owner: "{{ jmqttp_owner }}"
     group: "{{ jmqttp_group }}"
+    mode: "0644"
   tags:
     - client
   notify:
@@ -55,6 +58,7 @@
     dest: "{{ jmqttp_config }}"
     owner: "{{ jmqttp_owner }}"
     group: "{{ jmqttp_group }}"
+    mode: "0644"
   tags:
     - config
   notify:
@@ -64,6 +68,7 @@
   template:
     src: templates/jmqttp.service.j2
     dest: /etc/systemd/system/jmqttp.service
+    mode: "0644"
   register: _service_result
   tags:
     - service

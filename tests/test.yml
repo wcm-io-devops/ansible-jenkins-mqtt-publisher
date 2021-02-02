@@ -1,4 +1,5 @@
+---
 - name: Test role syntax.
   hosts: test
   roles:
-    - ansible-jenkins-mqtt-publisher
+    - wcm_io_devops.jenkins_mqtt_publisher
