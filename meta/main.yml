@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: jenkins_mqtt_publisher
+  namespace: wcm_io_devops
   author: Nico Bellack
   description: Deploys a service that polls a Jenkins instance for active jobs and publishes MQTT messages.
   company: pro!vision
